@@ -6,8 +6,8 @@ export const profile = {
   title: 'Software Engineer',
   tagline: 'I build AI-powered developer tools and infrastructure automation.',
   bio: [
-    "I'm a software engineer focused on the intersection of AI agents and infrastructure — building systems that reason about incidents, automate remediation, and turn unstructured knowledge into something queryable.",
-    'My recent work explores locally-run LLMs (Ollama) for privacy-preserving tooling, sandboxed command execution, and policy-guarded automation — favoring dependable, well-tested systems over quick hacks.',
+    "I'm a software engineer building AI agents that reason about infrastructure: analyzing incidents, automating remediation, and turning unstructured knowledge into something queryable.",
+    'My recent work runs on local LLMs via Ollama, favoring private, dependable, well-tested tooling over quick hacks.',
   ],
   location: 'TODO: your location',
   email: 'mengtobby@gmail.com',
