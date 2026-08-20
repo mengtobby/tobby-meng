@@ -1,6 +1,3 @@
-// TODO: This is placeholder/draft content generated from your public GitHub profile.
-// Edit the values below with your real bio, role, and experience.
-
 export const profile = {
   name: 'Tobby Meng',
   firstName: 'Tobby',
@@ -8,16 +5,16 @@ export const profile = {
   title: 'Software Engineer',
   heroLead: 'software engineer',
   heroVerb: 'automates',
-  tagline: 'I build AI-powered developer tools and infrastructure automation.',
+  tagline: 'I build AI agents and full-stack platforms that ship fast and fail safely.',
   bio: [
-    "I'm a software engineer building AI agents that reason about infrastructure: analyzing incidents, automating remediation, and turning unstructured knowledge into something queryable.",
-    'My recent work runs on local LLMs via Ollama, favoring private, dependable, well-tested tooling over quick hacks.',
+    "I'm an Electrical Engineering student at the University of Waterloo who spends most of my time writing software: agents that debug and remediate infrastructure, RAG search tools, and full-stack platforms.",
+    "I've shipped dashboards and APIs at Qwhery, and I'm heading into a software engineering internship with the Ontario government this fall. Before that, I spent two years teaching competition math, which taught me how to break hard problems into steps anyone can follow.",
   ],
-  location: 'TODO: your location',
+  location: 'Waterloo, ON',
   email: 'mengtobby@gmail.com',
   github: 'https://github.com/mengtobby',
-  linkedin: 'https://linkedin.com/in/tobbymeng', // TODO: confirm this is your real LinkedIn URL
-  resumeUrl: '', // TODO: add a link to your resume/CV if you'd like a download button
+  linkedin: 'https://linkedin.com/in/tobby-meng',
+  resumeUrl: '/resume.pdf',
 } as const;
 
 export type Skill = {
@@ -27,50 +24,41 @@ export type Skill = {
 
 export const skills: Skill[] = [
   {
-    category: 'Languages',
-    items: ['TypeScript', 'JavaScript', 'Python', 'SQL'],
+    category: 'Languages & Web',
+    items: ['Python', 'C/C++', 'TypeScript', 'JavaScript', 'SQL', 'React', 'Next.js', 'Angular', 'HTML/CSS'],
   },
   {
-    category: 'AI / LLM',
-    items: ['LLM Agents', 'Ollama', 'Prompt Engineering', 'Vector Search', 'RAG'],
+    category: 'Backend & Systems',
+    items: ['FastAPI', 'REST APIs', 'gRPC', 'Pydantic', 'Node.js', 'Docker', 'Linux', 'Arduino'],
   },
   {
-    category: 'Backend',
-    items: ['Node.js', 'Express', 'REST APIs', 'SQLite'],
-  },
-  {
-    category: 'Infrastructure',
-    items: ['Docker', 'Sandboxing', 'CI/CD', 'Policy Automation'],
+    category: 'Databases & Tools',
+    items: ['PostgreSQL', 'Redis', 'MongoDB', 'Git', 'Azure DevOps'],
   },
 ];
 
-// TODO: swap in your real work experience if you have internships/jobs to list —
-// this defaults to your public repos since that's the only verifiable history available.
 export type TimelineEntry = {
   year: string;
   name: string;
   role: string;
-  href: string;
+  href?: string;
 };
 
 export const timeline: TimelineEntry[] = [
   {
     year: '2026',
-    name: 'Portfolio Website',
-    role: 'Personal site',
-    href: 'https://github.com/mengtobby/tobby-meng',
+    name: 'Ontario Ministry of PBSD&P',
+    role: 'Software Engineering Intern (Incoming)',
   },
   {
     year: '2026',
-    name: 'Autonomous Infrastructure Agent',
-    role: 'AI incident remediation',
-    href: 'https://github.com/mengtobby/autonomous-infrastructure-agent',
+    name: 'Qwhery Inc.',
+    role: 'Software Engineering Intern',
   },
   {
-    year: '2026',
-    name: 'AI Knowledge Assistant',
-    role: 'Local document RAG',
-    href: 'https://github.com/mengtobby/personal-ai-knowledge-assistant',
+    year: '2024',
+    name: 'Crania Schools',
+    role: 'Mathematics Teacher',
   },
 ];
 
@@ -79,24 +67,32 @@ export type Project = {
   description: string;
   tech: string[];
   href: string;
-  block: 'a' | 'b';
+  block: 'a' | 'b' | 'c';
 };
 
 export const projects: Project[] = [
   {
     name: 'Autonomous Infrastructure Agent',
     description:
-      'An autonomous SRE agent that analyzes real-time microservice incident alerts, determines root cause, and drafts remediation plans. Runs commands in a sandboxed Docker workspace behind a policy checker, and now supports fully local inference via Ollama.',
-    tech: ['TypeScript', 'Ollama', 'Docker', 'Express'],
+      'An automated debugging agent that listens to server log streams via gRPC, identifies crash errors, and generates bug fixes automatically. Runs fixes inside isolated Docker containers with a safety checker blocking dangerous commands, auto-fixing microservice crashes in under 12 seconds.',
+    tech: ['Python', 'gRPC', 'Docker', 'Redis'],
     href: 'https://github.com/mengtobby/autonomous-infrastructure-agent',
     block: 'a',
   },
   {
-    name: 'Personal AI Knowledge Assistant',
+    name: 'RAG Knowledge Base & Search Engine',
     description:
-      'A locally-hosted document intelligence system: upload PDFs, DOCX, CSV/XLSX, or scanned images and query them through a chatbot that answers strictly from your own documents, with source citations. Runs entirely offline on Ollama and local vector search.',
-    tech: ['TypeScript', 'Ollama', 'SQLite', 'Vector Search', 'OCR'],
+      'A search tool that lets users upload PDF/Markdown documents and ask questions about their content in plain English. Stores embeddings in PostgreSQL with pgvector for meaning-based search, and streams AI responses word-by-word over WebSockets alongside exact source highlights.',
+    tech: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'pgvector'],
     href: 'https://github.com/mengtobby/personal-ai-knowledge-assistant',
     block: 'b',
+  },
+  {
+    name: 'AI-Assisted Delirium Detection System',
+    description:
+      'A $50 hardware device using an Arduino microphone circuit that records patient speech to screen for clinical delirium. A Python service cleans the raw audio and sends transcripts to GPT for medical evaluation, delivering results to a clinician in under 30 seconds.',
+    tech: ['Arduino', 'Python', 'GPT'],
+    href: 'https://github.com/mengtobby',
+    block: 'c',
   },
 ];

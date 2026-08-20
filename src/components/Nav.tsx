@@ -34,6 +34,18 @@ export default function Nav() {
               </a>
             </li>
           ))}
+          {profile.resumeUrl && (
+            <li>
+              <a
+                href={profile.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="font-mono text-xs uppercase tracking-wider text-muted transition-colors hover:text-ink"
+              >
+                Resume
+              </a>
+            </li>
+          )}
         </ul>
 
         <a

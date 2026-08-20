@@ -26,14 +26,18 @@ export default function Hero() {
               className="grid grid-cols-[3rem_minmax(11rem,auto)_1fr] items-baseline gap-x-6 py-1"
             >
               <dt className="font-mono text-sm text-faint">{entry.year}</dt>
-              <a
-                href={entry.href}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-medium text-ink transition-colors hover:text-accent"
-              >
-                {entry.name}
-              </a>
+              {entry.href ? (
+                <a
+                  href={entry.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-medium text-ink transition-colors hover:text-accent"
+                >
+                  {entry.name}
+                </a>
+              ) : (
+                <span className="text-sm font-medium text-ink">{entry.name}</span>
+              )}
               <dd className="text-sm text-muted">{entry.role}</dd>
             </div>
           ))}
