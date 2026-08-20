@@ -1,55 +1,46 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
 import { projects } from '../data/content';
+
+const blockStyles = {
+  a: 'bg-block-a',
+  b: 'bg-block-b',
+} as const;
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-3xl px-6 py-16 md:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <h2 className="mb-2 font-mono text-sm text-accent">03 — Projects</h2>
-        <h3 className="mb-10 text-3xl font-semibold tracking-tight text-ink">Selected work</h3>
-      </motion.div>
-
-      <div className="flex flex-col gap-5">
+    <section id="work" className="border-t border-border">
+      <div className="grid sm:grid-cols-2">
         {projects.map((project, i) => (
           <motion.a
             key={project.name}
             href={project.href}
             target="_blank"
             rel="noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-border-hover hover:bg-surface-hover sm:p-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            className={`group relative flex aspect-[4/3] flex-col justify-end p-6 sm:p-8 ${blockStyles[project.block]} ${
+              i === 0 ? 'sm:border-r border-border' : ''
+            }`}
           >
-            <div className="flex items-start justify-between gap-4">
-              <h4 className="text-xl font-medium text-ink transition-colors group-hover:text-accent-bright">
-                {project.name}
-              </h4>
-              <ArrowUpRight
-                size={20}
-                className="mt-1 shrink-0 text-faint transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent-bright"
-              />
+            <div className="translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              <h3 className="text-xl font-medium text-ink">{project.name}</h3>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-ink/70">{project.description}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-sm bg-bg/60 px-2 py-0.5 font-mono text-xs text-ink/70"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted">
-              {project.description}
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {project.tech.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-md bg-bg px-2.5 py-1 font-mono text-xs text-faint"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
+            <span className="absolute right-6 top-6 font-mono text-xs uppercase tracking-wider text-ink/50 transition-opacity duration-300 group-hover:opacity-0 sm:top-8">
+              {project.name}
+            </span>
           </motion.a>
         ))}
       </div>

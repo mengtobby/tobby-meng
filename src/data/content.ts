@@ -3,7 +3,11 @@
 
 export const profile = {
   name: 'Tobby Meng',
+  firstName: 'Tobby',
+  handle: '@mengtobby',
   title: 'Software Engineer',
+  heroLead: 'software engineer',
+  heroVerb: 'automates',
   tagline: 'I build AI-powered developer tools and infrastructure automation.',
   bio: [
     "I'm a software engineer building AI agents that reason about infrastructure: analyzing incidents, automating remediation, and turning unstructured knowledge into something queryable.",
@@ -40,12 +44,42 @@ export const skills: Skill[] = [
   },
 ];
 
+// TODO: swap in your real work experience if you have internships/jobs to list —
+// this defaults to your public repos since that's the only verifiable history available.
+export type TimelineEntry = {
+  year: string;
+  name: string;
+  role: string;
+  href: string;
+};
+
+export const timeline: TimelineEntry[] = [
+  {
+    year: '2026',
+    name: 'Portfolio Website',
+    role: 'Personal site',
+    href: 'https://github.com/mengtobby/tobby-meng',
+  },
+  {
+    year: '2026',
+    name: 'Autonomous Infrastructure Agent',
+    role: 'AI incident remediation',
+    href: 'https://github.com/mengtobby/autonomous-infrastructure-agent',
+  },
+  {
+    year: '2026',
+    name: 'AI Knowledge Assistant',
+    role: 'Local document RAG',
+    href: 'https://github.com/mengtobby/personal-ai-knowledge-assistant',
+  },
+];
+
 export type Project = {
   name: string;
   description: string;
   tech: string[];
   href: string;
-  featured?: boolean;
+  block: 'a' | 'b';
 };
 
 export const projects: Project[] = [
@@ -55,7 +89,7 @@ export const projects: Project[] = [
       'An autonomous SRE agent that analyzes real-time microservice incident alerts, determines root cause, and drafts remediation plans. Runs commands in a sandboxed Docker workspace behind a policy checker, and now supports fully local inference via Ollama.',
     tech: ['TypeScript', 'Ollama', 'Docker', 'Express'],
     href: 'https://github.com/mengtobby/autonomous-infrastructure-agent',
-    featured: true,
+    block: 'a',
   },
   {
     name: 'Personal AI Knowledge Assistant',
@@ -63,6 +97,6 @@ export const projects: Project[] = [
       'A locally-hosted document intelligence system: upload PDFs, DOCX, CSV/XLSX, or scanned images and query them through a chatbot that answers strictly from your own documents, with source citations. Runs entirely offline on Ollama and local vector search.',
     tech: ['TypeScript', 'Ollama', 'SQLite', 'Vector Search', 'OCR'],
     href: 'https://github.com/mengtobby/personal-ai-knowledge-assistant',
-    featured: true,
+    block: 'b',
   },
 ];
