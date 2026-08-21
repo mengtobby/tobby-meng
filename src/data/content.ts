@@ -64,6 +64,7 @@ export const timeline: TimelineEntry[] = [
 
 export type Project = {
   name: string;
+  tagline: string;
   description: string;
   tech: string[];
   href: string;
@@ -73,24 +74,27 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: 'Autonomous Infrastructure Agent',
+    tagline: 'Auto-fixes microservice crashes in under 12 seconds.',
     description:
-      'An automated debugging agent that listens to server log streams via gRPC, identifies crash errors, and generates bug fixes automatically. Runs fixes inside isolated Docker containers with a safety checker blocking dangerous commands, auto-fixing microservice crashes in under 12 seconds.',
+      'An automated debugging agent that listens to server log streams via gRPC, identifies crash errors, and generates bug fixes automatically. Runs fixes inside isolated Docker containers with a safety checker blocking dangerous commands.',
     tech: ['Python', 'gRPC', 'Docker', 'Redis'],
     href: 'https://github.com/mengtobby/autonomous-infrastructure-agent',
     block: 'a',
   },
   {
     name: 'RAG Knowledge Base & Search Engine',
+    tagline: 'Ask your own documents questions in plain English.',
     description:
-      'A search tool that lets users upload PDF/Markdown documents and ask questions about their content in plain English. Stores embeddings in PostgreSQL with pgvector for meaning-based search, and streams AI responses word-by-word over WebSockets alongside exact source highlights.',
+      'Stores document embeddings in PostgreSQL with pgvector for meaning-based search, and streams AI responses word-by-word over WebSockets alongside exact source highlights.',
     tech: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'pgvector'],
     href: 'https://github.com/mengtobby/personal-ai-knowledge-assistant',
     block: 'b',
   },
   {
     name: 'AI-Assisted Delirium Detection System',
+    tagline: 'Screens for clinical delirium from 30 seconds of speech.',
     description:
-      'A $50 hardware device using an Arduino microphone circuit that records patient speech to screen for clinical delirium. A Python service cleans the raw audio and sends transcripts to GPT for medical evaluation, delivering results to a clinician in under 30 seconds.',
+      'A $50 hardware device using an Arduino microphone circuit that records patient speech. A Python service cleans the raw audio and sends transcripts to GPT for medical evaluation.',
     tech: ['Arduino', 'Python', 'GPT'],
     href: 'https://github.com/mengtobby',
     block: 'c',

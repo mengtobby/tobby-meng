@@ -3,22 +3,28 @@
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
-  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
 
-  --color-bg: #faf9f6;
-  --color-surface: #f2f0ea;
-  --color-surface-hover: #ebe8e0;
-  --color-border: #e4e1d8;
-  --color-border-hover: #d3cfc2;
-  --color-ink: #1e2937;
-  --color-muted: #6b7280;
-  --color-faint: #9a978d;
-  --color-accent: #d9622c;
-  --color-accent-bright: #c25422;
-  --color-accent-dim: #e8a582;
-  --color-block-a: #eecda3;
-  --color-block-b: #e2ddf5;
-  --color-block-c: #cfe3d8;
+  /* Warm ivory field with a cool cobalt accent for contrast (color theory: */
+  /* warm neutrals + one cool accent), instead of a pastel-rainbow palette. */
+  --color-bg: #f6f1e7;
+  --color-surface: #efe8d8;
+  --color-surface-hover: #e8e0cc;
+  --color-border: #e0d7c1;
+  --color-border-hover: #cbbe9f;
+  --color-ink: #211d1a;
+  --color-muted: #6f6a5e;
+  --color-faint: #8c8672;
+  --color-accent: #2f4bd6;
+  --color-accent-bright: #4a63e8;
+  --color-accent-dim: #a9b4ee;
+  --color-cream: #f6f1e7;
+
+  /* Tonal, saturated tiles (deep terracotta / indigo / olive) instead of */
+  /* pastel blocks — reads as a coherent, branded set rather than a rainbow. */
+  --color-block-a: #8a4a32;
+  --color-block-b: #2c3a63;
+  --color-block-c: #3f4f3a;
 }
 
 html {
@@ -37,7 +43,14 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-bg);
+  color: var(--color-cream);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 1px;
 }
 
 ::-webkit-scrollbar {
