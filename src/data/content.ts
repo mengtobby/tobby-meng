@@ -3,8 +3,8 @@ export const profile = {
   firstName: 'Tobby',
   handle: '@mengtobby',
   title: 'Software Engineer',
-  heroLead: 'software engineer',
-  heroVerb: 'automates',
+  heroPrefix: 'I build agents that fix bugs while I',
+  heroHighlight: 'sleep',
   tagline: 'I build AI agents and full-stack platforms that ship fast and fail safely.',
   bio: [
     "I'm an Electrical Engineering student at the University of Waterloo who spends most of my time writing software: agents that debug and remediate infrastructure, RAG search tools, and full-stack platforms.",

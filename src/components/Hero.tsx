@@ -11,9 +11,9 @@ export default function Hero() {
         className="max-w-3xl font-serif text-5xl leading-[1.1] text-ink sm:text-6xl md:text-[4.5rem]"
         style={{ fontVariationSettings: "'opsz' 90" }}
       >
-        I&apos;m {profile.firstName}, a {profile.heroLead} who{' '}
+        {profile.heroPrefix}{' '}
         <span className="relative inline-block whitespace-nowrap">
-          <span className="relative z-10 font-serif italic">{profile.heroVerb}</span>
+          <span className="relative z-10 font-serif italic">{profile.heroHighlight}</span>
           <span className="absolute inset-x-0 bottom-1 -z-0 h-[0.3em] bg-accent-dim/70" aria-hidden="true" />
         </span>
         .
