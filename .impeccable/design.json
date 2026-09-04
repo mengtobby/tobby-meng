@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-03T00:00:00Z",
+  "title": "Design System: Tobby Meng — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "bg": { "role": "neutral", "displayName": "Graphite Black", "canonical": "#0a0a0c", "tonalRamp": ["#050506", "#0a0a0c", "#131417", "#1a1c20", "#24262b", "#34373d", "#6b6f76", "#a3a8b0"] },
+      "surface": { "role": "neutral", "displayName": "Panel Graphite", "canonical": "#131417", "tonalRamp": ["#0a0a0c", "#131417", "#1a1c20", "#24262b", "#34373d", "#4a4d54", "#6b6f76", "#a3a8b0"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#eef0f2", "tonalRamp": ["#0a0a0c", "#24262b", "#4a4d54", "#6b6f76", "#a3a8b0", "#c5c9ce", "#dfe1e3", "#eef0f2"] },
+      "accent": { "role": "primary", "displayName": "Confident Emerald", "canonical": "#2fae81", "tonalRamp": ["#0c2318", "#123527", "#1c6b4e", "#237f5d", "#2fae81", "#3ec695", "#7bd9b7", "#c3ecdc"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only, one per page." },
+      "body": { "displayName": "Body", "purpose": "Bio paragraphs, descriptions, chip roles, all UI labels." },
+      "label-mono": { "displayName": "Mono Label", "purpose": "Timeline years and tech-stack tags only — genuine data, never decoration." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "hero-load-in", "value": "opacity 0->1, y 12px->0, 600ms cubic-bezier(0.16,1,0.3,1)", "purpose": "The system's one entrance moment, on the hero only, once per page load." },
+      { "name": "tile-reveal", "value": "grid-template-rows 0fr->1fr, 300ms ease-out", "purpose": "The system's one signature interaction: project-tile hover reveals full description + tech tags." },
+      { "name": "state-transition", "value": "color/background/border 200ms ease-out", "purpose": "All hover/focus color transitions across nav, links, and tiles." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Nav Link (active)",
+      "kind": "nav",
+      "refersTo": "nav-link-active",
+      "description": "The current section's nav link — accent color plus underline, never color alone.",
+      "html": "<a class=\"ds-nav-link ds-nav-link--active\" href=\"#work\">Work</a>",
+      "css": ".ds-nav-link { font-family: 'Satoshi', system-ui, sans-serif; font-size: 14px; font-weight: 500; color: #a3a8b0; text-decoration: none; transition: color 200ms ease-out; } .ds-nav-link:hover { color: #eef0f2; } .ds-nav-link--active { color: #3ec695; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }"
+    },
+    {
+      "name": "Timeline Chip",
+      "kind": "chip",
+      "refersTo": "timeline-chip",
+      "description": "A work-history entry: mono year, bold company, muted role, in a pill.",
+      "html": "<a class=\"ds-chip\" href=\"#\"><span class=\"ds-chip-year\">2026</span><span class=\"ds-chip-name\">Qwhery Inc.</span><span class=\"ds-chip-sep\">·</span><span class=\"ds-chip-role\">Software Engineering Intern</span></a>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; border-radius: 9999px; background: #131417; border: 1px solid #24262b; padding: 8px 14px; font-size: 14px; text-decoration: none; transition: border-color 200ms ease-out, background-color 200ms ease-out; } .ds-chip:hover { border-color: #1c6b4e; background: #1a1c20; } .ds-chip:focus-visible { outline: 2px solid #2fae81; outline-offset: 3px; } .ds-chip-year { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6b6f76; font-variant-numeric: tabular-nums; } .ds-chip-name { font-weight: 500; color: #eef0f2; } .ds-chip-sep, .ds-chip-role { color: #a3a8b0; }"
+    },
+    {
+      "name": "Project Tile",
+      "kind": "card",
+      "refersTo": "project-tile",
+      "description": "A work-sample card: name + tagline always visible, hover reveals full description and tech tags via a grid-rows expansion (the system's signature interaction).",
+      "html": "<a class=\"ds-tile\" href=\"#\"><h3 class=\"ds-tile-title\">Autonomous Infrastructure Agent</h3><p class=\"ds-tile-tagline\">Auto-fixes microservice crashes in under 12 seconds.</p></a>",
+      "css": ".ds-tile { display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border-radius: 8px; border: 1px solid #24262b; background: #131417; padding: 28px; text-decoration: none; transition: border-color 200ms ease-out, background-color 200ms ease-out; } .ds-tile:hover { border-color: #1c6b4e; background: #1a1c20; } .ds-tile-title { font-family: 'Cabinet Grotesk', system-ui, sans-serif; font-weight: 600; font-size: 20px; color: #eef0f2; margin: 0; } .ds-tile-tagline { font-size: 14px; line-height: 1.6; color: #a3a8b0; margin: 6px 0 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Instrument, Not the Résumé",
+    "overview": "This is a category-standard portfolio (a chosen \"canon\" build) executed at a craft bar set against rauno.me, joshwcomeau.com, and linear.app, rather than a themed metaphor world. The system reads as a precise, quiet instrument for one job: let a recruiter confirm in seconds that this person can ship at both big-tech rigor and startup speed. Near-black graphite replaces the site's two prior looks; this pass deliberately breaks from both, and from the warm-cream-plus-serif pattern AI-generated portfolios default to. Restraint is the whole argument: one neutral scale, one accent color, two self-hosted typefaces, no gradients, no glow, no glassmorphism.",
+    "keyCharacteristics": [
+      "Near-black graphite ground with a single confident, non-neon emerald accent used flat",
+      "Two self-hosted typefaces (Cabinet Grotesk display, Satoshi body) — no system-font-as-display-voice",
+      "One authored motion moment (hero load-in) plus one signature interaction (project-tile hover reveal)",
+      "Real, verified content only; no invented metrics, testimonials, or claims"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Emerald appears only on interactive or single-emphasis moments. It never fills a background region or appears twice in the same static viewport.", "section": "colors" },
+      { "name": "The Mono-Is-Data Rule", "body": "JetBrains Mono appears only on timeline years and technology-name tags — never nav labels, headings, or link text.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "No shadows, no blur-based glow, no gradient standing in for a shadow. Depth is tonal-step layering only.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep emerald to interactive/single-emphasis moments only",
+      "Do give every section a real, standalone heading — no eyebrow/kicker labels",
+      "Do reserve JetBrains Mono for genuine data",
+      "Do keep motion to one load-in moment plus the project-tile hover reveal",
+      "Do verify any new text color against both bg and surface at ≥4.5:1"
+    ],
+    "donts": [
+      "Don't add a gradient, glow, or blur-based halo anywhere",
+      "Don't hide a project's name or description behind hover-only content",
+      "Don't reintroduce a kicker/eyebrow label above a heading",
+      "Don't add a second accent color",
+      "Don't fabricate or embellish a resume fact"
+    ]
+  }
+}
