@@ -68,7 +68,6 @@ export type Project = {
   description: string;
   tech: string[];
   href: string;
-  block: 'a' | 'b' | 'c';
 };
 
 export const projects: Project[] = [
@@ -79,7 +78,6 @@ export const projects: Project[] = [
       'An automated debugging agent that listens to server log streams via gRPC, identifies crash errors, and generates bug fixes automatically. Runs fixes inside isolated Docker containers with a safety checker blocking dangerous commands.',
     tech: ['Python', 'gRPC', 'Docker', 'Redis'],
     href: 'https://github.com/mengtobby/autonomous-infrastructure-agent',
-    block: 'a',
   },
   {
     name: 'RAG Knowledge Base & Search Engine',
@@ -88,7 +86,6 @@ export const projects: Project[] = [
       'Stores document embeddings in PostgreSQL with pgvector for meaning-based search, and streams AI responses word-by-word over WebSockets alongside exact source highlights.',
     tech: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'pgvector'],
     href: 'https://github.com/mengtobby/personal-ai-knowledge-assistant',
-    block: 'b',
   },
   {
     name: 'AI-Assisted Delirium Detection System',
@@ -97,6 +94,5 @@ export const projects: Project[] = [
       'A $50 hardware device using an Arduino microphone circuit that records patient speech. A Python service cleans the raw audio and sends transcripts to GPT for medical evaluation.',
     tech: ['Arduino', 'Python', 'GPT'],
     href: 'https://github.com/mengtobby',
-    block: 'c',
   },
 ];
