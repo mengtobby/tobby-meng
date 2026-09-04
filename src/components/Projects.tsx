@@ -17,7 +17,7 @@ export default function Projects() {
             href={project.href}
             target="_blank"
             rel="noreferrer"
-            className={`group relative flex flex-col justify-end overflow-hidden rounded-lg border border-border bg-surface p-6 transition-colors duration-300 hover:border-accent-dim hover:bg-surface-hover sm:p-7 ${tileLayout[i]}`}
+            className={`group relative flex flex-col justify-end overflow-hidden rounded-lg border border-border bg-surface p-6 transition-colors duration-200 ease-out hover:border-accent-dim hover:bg-surface-hover sm:p-7 ${tileLayout[i]}`}
           >
             <h3 className="text-lg font-semibold text-ink sm:text-xl">{project.name}</h3>
             <p className="mt-1.5 max-w-sm text-sm leading-relaxed text-muted">{project.tagline}</p>

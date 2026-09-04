@@ -11,7 +11,7 @@ export default function Contact() {
 
         <a
           href={`mailto:${profile.email}`}
-          className="inline-flex items-center border-b border-ink pb-0.5 text-lg text-ink transition-colors hover:border-accent hover:text-accent-bright"
+          className="inline-flex items-center border-b border-ink pb-0.5 text-lg text-ink transition-colors duration-200 ease-out hover:border-accent hover:text-accent-bright"
         >
           {profile.email}
         </a>
@@ -21,7 +21,7 @@ export default function Contact() {
             href={profile.github}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 text-sm font-medium text-faint transition-colors hover:text-ink"
+            className="flex items-center gap-2 text-sm font-medium text-faint transition-colors duration-200 ease-out hover:text-ink"
           >
             <GithubIcon size={16} />
             GitHub
@@ -30,7 +30,7 @@ export default function Contact() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 text-sm font-medium text-faint transition-colors hover:text-ink"
+            className="flex items-center gap-2 text-sm font-medium text-faint transition-colors duration-200 ease-out hover:text-ink"
           >
             <LinkedinIcon size={16} />
             LinkedIn
