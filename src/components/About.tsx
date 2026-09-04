@@ -10,8 +10,8 @@ export default function About() {
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="mb-6 font-mono text-xs uppercase tracking-wider text-accent">About</h2>
-        <div className="space-y-5 font-serif text-2xl leading-relaxed text-ink sm:text-3xl">
+        <h2 className="mb-6 font-display text-3xl font-bold text-ink sm:text-4xl">About</h2>
+        <div className="max-w-prose space-y-5 text-lg leading-relaxed text-muted">
           {profile.bio.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

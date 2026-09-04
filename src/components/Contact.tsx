@@ -12,14 +12,13 @@ export default function Contact() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h2 className="mb-6 font-mono text-xs uppercase tracking-wider text-accent">Contact</h2>
-          <p className="mb-8 max-w-lg font-serif text-3xl leading-snug text-ink sm:text-4xl">
+          <h2 className="mb-8 max-w-lg font-display text-3xl font-bold leading-snug text-ink sm:text-4xl">
             Let&apos;s build something together.
-          </p>
+          </h2>
 
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex items-center border-b border-ink pb-0.5 text-lg text-ink transition-colors hover:border-accent hover:text-accent"
+            className="inline-flex items-center border-b border-ink pb-0.5 text-lg text-ink transition-colors hover:border-accent hover:text-accent-bright"
           >
             {profile.email}
           </a>
@@ -29,7 +28,7 @@ export default function Contact() {
               href={profile.github}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-faint transition-colors hover:text-ink"
+              className="flex items-center gap-2 text-sm font-medium text-faint transition-colors hover:text-ink"
             >
               <GithubIcon size={16} />
               GitHub
@@ -38,7 +37,7 @@ export default function Contact() {
               href={profile.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-faint transition-colors hover:text-ink"
+              className="flex items-center gap-2 text-sm font-medium text-faint transition-colors hover:text-ink"
             >
               <LinkedinIcon size={16} />
               LinkedIn
