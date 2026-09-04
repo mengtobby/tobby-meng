@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { projects } from '../data/content';
 
 const tileLayout = [
@@ -13,15 +12,11 @@ export default function Projects() {
       <h2 className="mb-8 font-display text-3xl font-bold text-ink sm:text-4xl">Selected work</h2>
       <div className="grid gap-3 sm:grid-cols-3 sm:grid-rows-2">
         {projects.map((project, i) => (
-          <motion.a
+          <a
             key={project.name}
             href={project.href}
             target="_blank"
             rel="noreferrer"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
             className={`group relative flex flex-col justify-end overflow-hidden rounded-lg border border-border bg-surface p-6 transition-colors duration-300 hover:border-accent-dim hover:bg-surface-hover sm:p-7 ${tileLayout[i]}`}
           >
             <h3 className="text-lg font-semibold text-ink sm:text-xl">{project.name}</h3>
@@ -42,7 +37,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </motion.a>
+          </a>
         ))}
       </div>
     </section>
